@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASSIFIED // Секретные Рецепты</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-badge">RESTRICTED</span>
+                <h1>TOP SECRET RECIPES</h1>
+            </div>
+            <div class="clearance-badge">
+                Допуск: <span class="highlight">УРОВЕНЬ 5</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero scroll-reveal">
+            закрытая кулинарная база данных
+            <p>Доступ строго регламентирован. Изучайте секретные технологии приготовления легендарных блюд.</p>
+        </section>
+
+        <div class="filters scroll-reveal">
+            <button class="filter-btn active" data-filter="all">Все объекты</button>
+            <button class="filter-btn" data-filter="hot">Горячее</button>
+            <button class="filter-btn" data-filter="dessert">Десерты</button>
+            <button class="filter-btn" data-filter="drink">Напитки</button>
+        </div>
+
+        <section class="recipes-grid" id="recipesGrid">
+            <!-- Карточки генерируются через JS -->
+        </section>
+    </main>
+
+    <!-- Модальное окно -->
+    <div class="modal" id="recipeModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 ARCHIVES // КЛАССИФИЦИРОВАНО</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
