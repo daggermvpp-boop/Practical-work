@@ -1,54 +1,73 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLASSIFIED // Секретные Рецепты</title>
+    <title>TAJNE ARCHIWUM // Przepisy Laboratoryjne</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div class="cursor-glow" id="cursorGlow"></div>
+
     <header class="header">
         <div class="header-container">
             <div class="logo">
-                <span class="logo-badge">RESTRICTED</span>
-                <h1>TOP SECRET RECIPES</h1>
+                <span class="logo-badge">POZIOM 5</span>
+                <h1>TAJNE RECEPTURY</h1>
             </div>
-            <div class="clearance-badge">
-                Допуск: <span class="highlight">УРОВЕНЬ 5</span>
+            <div class="status-indicators">
+                <div class="status-pill secure">SECURE // 200 OK</div>
+                <div class="status-pill clearance">KLASYFIKACJA: ULTRA</div>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <section class="hero scroll-reveal">
-            закрытая кулинарная база данных
-            <p>Доступ строго регламентирован. Изучайте секретные технологии приготовления легендарных блюд.</p>
+        <section class="hero scroll-reveal-3d">
+            <div class="hero-badge-floating">BETA PROTOCOL v3.4</div>
+            <h2>KLASYFIKOWANA BAZA KULINARNA</h2>
+            <p>Dostęp autoryzowany wyłącznie dla personelu badawczego. Analiza unikalnych struktur smakowych i technologicznych.</p>
         </section>
 
-        <div class="filters scroll-reveal">
-            <button class="filter-btn active" data-filter="all">Все объекты</button>
-            <button class="filter-btn" data-filter="hot">Горячее</button>
-            <button class="filter-btn" data-filter="dessert">Десерты</button>
-            <button class="filter-btn" data-filter="drink">Напитки</button>
+        <div class="stats-bar scroll-reveal-3d">
+            <div class="stat-card">
+                <span class="stat-value">09</span>
+                <span class="stat-label">Aktywne Obiekty</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">v4.2</span>
+                <span class="stat-label">Wersja Rdzenia</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">99.8%</span>
+                <span class="stat-label">Stabilność Sieci</span>
+            </div>
+        </div>
+
+        <div class="filters scroll-reveal-3d">
+            <button type="button" class="filter-btn active" data-filter="all">Wszystkie obiekty</button>
+            <button type="button" class="filter-btn" data-filter="hot">Dania główne</button>
+            <button type="button" class="filter-btn" data-filter="dessert">Desery</button>
+            <button type="button" class="filter-btn" data-filter="drink">Eksperymenty Płynne</button>
         </div>
 
         <section class="recipes-grid" id="recipesGrid">
-            <!-- Карточки генерируются через JS -->
+            <!-- Dynamiczne generowanie przez JS -->
         </section>
     </main>
 
-    <!-- Модальное окно -->
+    <!-- Modal -->
     <div class="modal" id="recipeModal">
         <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
+            <button type="button" class="modal-close" id="modalClose">&times;</button>
             <div id="modalBody"></div>
         </div>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2026 ARCHIVES // КЛАССИФИЦИРОВАНО</p>
+        <p>&copy; 2026 ARCHIWUM LABORATORYJNE // WSZELKIE PRAWA ZASTRZEŻONE</p>
     </footer>
 
     <script src="js/app.js"></script>

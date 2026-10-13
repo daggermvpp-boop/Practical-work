@@ -1,12 +1,13 @@
 :root {
-    --bg-color: #090d16;
-    --card-bg: #111827;
-    --border-color: #1f293d;
-    --accent-color: #38bdf8;
-    --accent-glow: rgba(56, 189, 248, 0.15);
-    --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
-    --danger: #f43f5e;
+    --bg-color: #060913;
+    --card-bg: #0d1322;
+    --border-color: #1a263f;
+    --accent-color: #00f0ff;
+    --accent-glow: rgba(0, 240, 255, 0.15);
+    --text-main: #f1f5f9;
+    --text-muted: #64748b;
+    --danger: #ff0055;
+    --success: #10b981;
 }
 
 * {
@@ -23,10 +24,23 @@ body {
     overflow-x: hidden;
 }
 
+/* Эффект свечения за курсором */
+.cursor-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.06) 0%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: width 0.3s, height 0.3s;
+}
+
 .header {
     border-bottom: 1px solid var(--border-color);
-    background: rgba(9, 13, 22, 0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(6, 9, 19, 0.85);
+    backdrop-filter: blur(16px);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -64,43 +78,114 @@ body {
     letter-spacing: -0.5px;
 }
 
-.clearance-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--text-muted);
+.status-indicators {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
 }
 
-.highlight {
+.status-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+}
+
+.status-pill.secure {
+    color: var(--success);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.status-pill.clearance {
     color: var(--accent-color);
-    font-weight: 700;
+    border-color: rgba(0, 240, 255, 0.3);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
 }
 
 .hero {
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 2.5rem;
+    position: relative;
+}
+
+.hero-badge-floating {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    background: var(--accent-glow);
+    border: 1px solid var(--accent-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.hero h2 {
+    font-size: 2.75rem;
     font-weight: 800;
     letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .hero p {
     color: var(--text-muted);
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    font-weight: 400;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Плашки со статистикой */
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.stat-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-4px);
+}
+
+.stat-value {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
 }
 
 .filters {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     flex-wrap: wrap;
 }
 
@@ -113,38 +198,40 @@ body {
     cursor: pointer;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.85rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .filter-btn:hover, .filter-btn.active {
     background: var(--accent-glow);
     border-color: var(--accent-color);
     color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px var(--accent-glow);
 }
 
 .recipes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .recipe-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.4s, box-shadow 0.4s;
+    position: relative;
 }
 
 .recipe-card:hover {
-    transform: translateY(-5px);
     border-color: var(--accent-color);
-    box-shadow: 0 10px 30px var(--accent-glow);
+    box-shadow: 0 15px 40px var(--accent-glow);
 }
 
 .recipe-img-container {
-    height: 200px;
+    height: 220px;
     overflow: hidden;
     position: relative;
 }
@@ -153,20 +240,20 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .recipe-card:hover .recipe-img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .recipe-category {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    background: rgba(9, 13, 22, 0.85);
-    backdrop-filter: blur(4px);
-    padding: 0.25rem 0.75rem;
+    background: rgba(6, 9, 19, 0.85);
+    backdrop-filter: blur(6px);
+    padding: 0.3rem 0.8rem;
     border-radius: 4px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
@@ -175,13 +262,14 @@ body {
 }
 
 .recipe-info {
-    padding: 1.5rem;
+    padding: 1.75rem;
 }
 
 .recipe-title {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .recipe-desc {
@@ -211,15 +299,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(9, 13, 22, 0.8);
-    backdrop-filter: blur(8px);
+    background: rgba(6, 9, 19, 0.85);
+    backdrop-filter: blur(12px);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
 }
 
 .modal.active {
@@ -231,18 +319,19 @@ body {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    max-width: 700px;
+    max-width: 750px;
     width: 90%;
     max-height: 90vh;
     overflow-y: auto;
-    padding: 2.5rem;
+    padding: 3rem;
     position: relative;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
+    transform: scale(0.9) translateY(40px) rotateX(10deg);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.7);
 }
 
 .modal.active .modal-content {
-    transform: translateY(0);
+    transform: scale(1) translateY(0) rotateX(0deg);
 }
 
 .modal-close {
@@ -262,8 +351,9 @@ body {
 }
 
 .modal-body h2 {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
     margin-bottom: 1rem;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .modal-body p {
@@ -275,9 +365,10 @@ body {
     font-family: 'JetBrains Mono', monospace;
     color: var(--accent-color);
     margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-size: 0.95rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .modal-body ul, .modal-body ol {
@@ -289,21 +380,22 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Scroll Reveal анимации */
-.scroll-reveal {
+/* ПРОДВИНУТАЯ 3D АНИМАЦИЯ СКРОЛЛА (Scroll Reveal) С ГЛУБОКИМ PERSPECTIVE И ROTATE */
+.scroll-reveal-3d {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: perspective(1200px) translateY(100px) rotateX(25deg) scale(0.92);
+    transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
 }
 
-.scroll-reveal.visible {
+.scroll-reveal-3d.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: perspective(1200px) translateY(0) rotateX(0deg) scale(1);
 }
 
 .footer {
     text-align: center;
-    padding: 3rem;
+    padding: 4rem;
     border-top: 1px solid var(--border-color);
     color: var(--text-muted);
     font-family: 'JetBrains Mono', monospace;
