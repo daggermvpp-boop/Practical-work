@@ -1,0 +1,35 @@
+/* ============================================================
+   TaskNest — tokeny CSS (zgodne z docs/design.md)
+   Kolory, czcionki i promienie używane w całym interfejsie.
+   ============================================================ */
+
+:root {
+    /* ---------- paleta ---------- */
+    --color-main: #5D536B;        /* przyciski główne, aktywny filtr, zaznaczony checkbox */
+    --color-secondary: #7D6B91;   /* obramowania pól i przycisków, ikony */
+    --color-background: #272838;  /* tło aplikacji */
+    --color-text: #DADAFF;        /* nagłówki i treść */
+
+    /* ---------- kolory pomocnicze ---------- */
+    --color-surface: #31334A;     /* tło kart i pól formularzy */
+    --color-muted: #A99BC0;       /* tekst pomocniczy, placeholdery */
+    --color-error: #FF9AA8;       /* błędy, wysoki priorytet */
+    --color-warning: #F2D49A;     /* średni priorytet */
+    --color-success: #8FD6B0;     /* niski priorytet, sukces */
+
+    /* ---------- typografia ---------- */
+    --font-heading: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+    --font-body: "Manrope", "Segoe UI", Arial, sans-serif;
+
+    --size-title: 28px;           /* tytuł ekranu */
+    --size-section: 20px;         /* nagłówek sekcji */
+    --size-body: 16px;            /* treść */
+    --size-helper: 14px;          /* tekst pomocniczy */
+    --size-label: 12px;           /* etykiety */
+
+    /* ---------- kształty ---------- */
+    --radius: 8px;                /* zaokrąglenie elementów */
+    --border-width: 1px;
+    --border-width-field: 1.5px;
+    --control-height: 44px;       /* wysokość przycisków i pól formularzy */
+}
