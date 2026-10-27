@@ -56,14 +56,14 @@ i komentarze, a usunięcie zadania usuwa jego komentarze.
 | Plik | Co robi | Kiedy uruchomić |
 |---|---|---|
 | [`schema.sql`](../database/schema.sql) | tworzy tabele `users`, `tasks`, `comment` z kluczami i indeksami | jako pierwszy |
-| [`insert-data.sql`](../database/insert-data.sql) | wgrywa po 5 przykładowych rekordów do każdej tabeli | jako drugi |
+| [`insert-data.sql`](../database/insert-data.sql) | czyści tabele i wgrywa po 5 przykładowych rekordów (można uruchamiać wielokrotnie) | jako drugi |
 | [`select-queries.sql`](../database/select-queries.sql) | 4 przykładowe zapytania `SELECT` (sortowanie, filtr, grupowanie, złączenie) | jako trzeci |
 
 ## 4. Jak odtworzyć bazę krok po kroku
 
 1. W pgAdmin 4 kliknij prawym przyciskiem myszy **Databases → Create → Database...** i utwórz bazę o nazwie `task_manager_db` (albo wykonaj `CREATE DATABASE task_manager_db;`).
 2. Otwórz **Query Tool** połączony z nową bazą, wczytaj plik `schema.sql` i uruchom go (F5).
-3. Uruchom `insert-data.sql` — do każdej tabeli trafi 5 przykładowych rekordów.
+3. Uruchom `insert-data.sql` — skrypt czyści tabele i wgrywa 5 przykładowych rekordów do każdej z nich (dzięki temu można go uruchamiać wielokrotnie).
 4. Uruchom `select-queries.sql` — np. zapytanie łączące pokaże 5 zadań z nazwami użytkowników, a zapytanie `GROUP BY` policzy zadania według statusu (3 × `done`, 2 × `pending`).
 
 Te same kroki można wykonać z wiersza poleceń:
