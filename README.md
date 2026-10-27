@@ -6,7 +6,7 @@
 
 **Aplikacja webowa do zarządzania zadaniami (menedżer zadań)**
 
-Praktyczna praca — Git · baza danych · administracja · dokumentacja
+Praktyczna praca Git · baza danych · administracja · dokumentacja
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-336791?logo=postgresql&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
@@ -35,8 +35,6 @@ W ramach pracy praktycznej wykonane zostały cztery obszary:
 
 ## Makiety ekranów
 
-Interfejs zaprojektowany w Figmie (ciemny motyw, prosty, „ścisły” styl) — szczegóły w
-[`docs/design.md`](docs/design.md), projekt: **[TaskNest – Design (Figma)](https://www.figma.com/design/La47nnBjcppw2h4ttijSLB)**.
 
 <p align="center">
   <img src="design/01-logowanie.png" width="45%" alt="Ekran logowania">
@@ -58,8 +56,7 @@ Interfejs zaprojektowany w Figmie (ciemny motyw, prosty, „ścisły” styl) �
 
 ## Baza danych
 
-Diagram ERD (szczegółowy opis tabel: [`docs/database.md`](docs/database.md)):
-
+Diagram 
 ![Diagram ERD](database/erd.png)
 
 Skrypty SQL:
@@ -89,29 +86,7 @@ CREATE DATABASE task_manager_db;
   symulacja awarii (`DROP TABLE users CASCADE`) i odtworzenie danych, a także zasada 3-2-1
   dla przechowywania kopii.
 
-## Struktura projektu
 
-```
-Practical-work/
-├── .github/workflows/ci.yaml    # CI: html-validate, stylelint, node --check
-├── backend/                     # backend aplikacji (PHP) — planowany
-├── database/                    # skrypty SQL i diagram ERD
-│   ├── schema.sql
-│   ├── insert-data.sql
-│   ├── select-queries.sql
-│   └── erd.png
-├── design/                      # makiety ekranów (eksport z Figmy)
-├── docs/                        # dokumentacja techniczna
-│   ├── database.md
-│   ├── database-roles.md
-│   ├── backup-restore.md
-│   ├── design.md
-│   └── screenshots/
-├── frontend/                    # warstwa frontendowa (HTML/CSS/JS)
-├── tests/                       # miejsce na testy — planowane
-├── .gitignore
-└── README.md
-```
 
 ## Git i CI
 
@@ -123,15 +98,7 @@ Practical-work/
   Requeście sprawdza: poprawność HTML (`html-validate`), składnię CSS (`stylelint`)
   i składnię JavaScript (`node --check`).
 
-## Dokumentacja
 
-| Dokument | Zawartość |
-|---|---|
-| [`docs/database.md`](docs/database.md) | opis bazy: ERD, tabele, relacje, skrypty, normalizacja |
-| [`docs/database-roles.md`](docs/database-roles.md) | użytkownicy i uprawnienia w PostgreSQL |
-| [`docs/backup-restore.md`](docs/backup-restore.md) | kopia zapasowa i odtworzenie bazy |
-| [`docs/design.md`](docs/design.md) | projekt interfejsu: makiety, paleta, kontrast, czcionki |
-| [`docs/prezentacja/TaskNest-prezentacja.pptx`](docs/prezentacja/TaskNest-prezentacja.pptx) | prezentacja projektu |
 
 ## Jak uruchomić
 
@@ -152,6 +119,6 @@ Practical-work/
 
 <div align="center">
 
-Autor: [daggermvpp-boop](https://github.com/daggermvpp-boop) · 4. klasa technikum · 2026
+Autor:Vladyslav M · 4Ti klasa technikum 
 
 </div>
