@@ -1,23 +1,19 @@
-/* ============================================================
-   TaskNest — tokeny CSS (zgodne z docs/design.md)
-   Kolory, czcionki i promienie używane w całym interfejsie.
-   ============================================================ */
+
 
 :root {
-    /* ---------- paleta ---------- */
-    --color-main: #5D536B;        /* przyciski główne, aktywny filtr, zaznaczony checkbox */
-    --color-secondary: #7D6B91;   /* obramowania pól i przycisków, ikony */
-    --color-background: #272838;  /* tło aplikacji */
-    --color-text: #DADAFF;        /* nagłówki i treść */
+ 
+    --color-main: #5D536B;       
+    --color-secondary: #7D6B91;  
+    --color-background: #272838;  
+    --color-text: #DADAFF;       
 
-    /* ---------- kolory pomocnicze ---------- */
-    --color-surface: #31334A;     /* tło kart i pól formularzy */
-    --color-muted: #A99BC0;       /* tekst pomocniczy, placeholdery */
-    --color-error: #FF9AA8;       /* błędy, wysoki priorytet */
-    --color-warning: #F2D49A;     /* średni priorytet */
-    --color-success: #8FD6B0;     /* niski priorytet, sukces */
+    --color-surface: #31334A;   
+    --color-muted: #A99BC0;     
+    --color-error: #FF9AA8;      
+    --color-warning: #F2D49A;   
+    --color-success: #8FD6B0;   
 
-    /* ---------- typografia ---------- */
+
     --font-heading: "Space Grotesk", "Segoe UI", Arial, sans-serif;
     --font-body: "Manrope", "Segoe UI", Arial, sans-serif;
 
@@ -27,9 +23,9 @@
     --size-helper: 14px;          /* tekst pomocniczy */
     --size-label: 12px;           /* etykiety */
 
-    /* ---------- kształty ---------- */
-    --radius: 8px;                /* zaokrąglenie elementów */
+ 
+    --radius: 8px;             
     --border-width: 1px;
     --border-width-field: 1.5px;
-    --control-height: 44px;       /* wysokość przycisków i pól formularzy */
+    --control-height: 44px;     
 }
