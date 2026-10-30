@@ -1,40 +1,73 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вкусно дома — рецепты</title>
+    <title>Moje zadania - tablica</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header class="header">
-        <h1>Вкусно дома</h1>
-        <p>Простые рецепты на каждый день</p>
+    <header class="naglowek">
+        <h1>Moje zadania</h1>
+        <p>Prosta tablica do zapisywania zadań</p>
     </header>
 
-    <main class="main">
-        <div class="filters">
-            <button type="button" class="filter-btn active" data-filter="all">Все</button>
-            <button type="button" class="filter-btn" data-filter="hot">Основные блюда</button>
-            <button type="button" class="filter-btn" data-filter="dessert">Десерты</button>
-            <button type="button" class="filter-btn" data-filter="drink">Напитки</button>
+    <main class="tresc">
+        <div class="pasek">
+            <button type="button" class="przycisk" id="dodajBtn">Dodaj zadanie</button>
+            <input type="search" id="szukaj" placeholder="Szukaj zadania...">
         </div>
 
-        <h2 class="list-title">Рецепты</h2>
+        <section class="formularz" id="formularz">
+            <h2 id="formularzTytul">Dodaj zadanie</h2>
 
-        <div id="recipes"></div>
+            <form id="zadanieForm">
+                <label for="tytul">Tytuł</label>
+                <input type="text" id="tytul" maxlength="100">
+
+                <label for="opis">Opis</label>
+                <textarea id="opis" rows="3"></textarea>
+
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="todo">Do zrobienia</option>
+                    <option value="progress">W trakcie</option>
+                    <option value="done">Zrobione</option>
+                </select>
+
+                <p class="blad" id="blad">Wpisz tytuł zadania.</p>
+
+                <div class="przyciski">
+                    <button type="submit" class="przycisk" id="zapiszBtn">Dodaj</button>
+                    <button type="button" class="przycisk przycisk-jasny" id="anulujBtn">Anuluj</button>
+                </div>
+            </form>
+        </section>
+
+        <div class="tablica">
+            <section class="kolumna">
+                <h2>Do zrobienia <span id="licznik-todo">0</span></h2>
+                <ul id="lista-todo"></ul>
+                <p class="pusto" id="pusto-todo">Brak zadań</p>
+            </section>
+
+            <section class="kolumna">
+                <h2>W trakcie <span id="licznik-progress">0</span></h2>
+                <ul id="lista-progress"></ul>
+                <p class="pusto" id="pusto-progress">Brak zadań</p>
+            </section>
+
+            <section class="kolumna">
+                <h2>Zrobione <span id="licznik-done">0</span></h2>
+                <ul id="lista-done"></ul>
+                <p class="pusto" id="pusto-done">Brak zadań</p>
+            </section>
+        </div>
     </main>
 
-    <div class="modal" id="recipeModal">
-        <div class="modal-content">
-            <button type="button" class="modal-close" id="modalClose">×</button>
-            <div id="modalBody"></div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <p>Учебный проект. Рецепты для примера.</p>
+    <footer class="stopka">
+        <p>Projekt na praktyki - prosty menedżer zadań</p>
     </footer>
 
     <script src="js/app.js"></script>

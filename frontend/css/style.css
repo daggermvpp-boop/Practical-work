@@ -1,176 +1,211 @@
-/* Общие стили страницы */
+/* Ogólne ustawienia strony */
 body {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #222;
+    background-color: #f5f5f5;
+    color: #222222;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.5;
 }
 
-/* Шапка */
-.header {
+/* Nagłówek */
+.naglowek {
     background-color: #ffffff;
     border-bottom: 1px solid #dddddd;
-    padding: 20px;
+    padding: 15px 20px;
     text-align: center;
 }
 
-.header h1 {
-    margin: 0 0 5px 0;
+.naglowek h1 {
+    margin: 0;
     font-size: 24px;
 }
 
-.header p {
-    margin: 0;
+.naglowek p {
+    margin: 5px 0 0 0;
     color: #666666;
     font-size: 14px;
 }
 
-/* Основная часть */
-.main {
-    max-width: 700px;
+/* Główna treść */
+.tresc {
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.filters {
-    text-align: center;
+.pasek {
     margin-bottom: 20px;
 }
 
-.filter-btn {
+.pasek input {
+    padding: 8px;
+    border: 1px solid #cccccc;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* Przyciski */
+.przycisk {
+    background-color: #2f5d8a;
+    border: 1px solid #2f5d8a;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.przycisk:hover {
+    background-color: #24486b;
+}
+
+.przycisk-jasny {
     background-color: #ffffff;
     border: 1px solid #cccccc;
     color: #333333;
-    font-size: 14px;
-    padding: 8px 12px;
-    margin: 0 4px 8px 0;
-    cursor: pointer;
 }
 
-.filter-btn:hover {
-    border-color: #999999;
+.przycisk-jasny:hover {
+    background-color: #eeeeee;
 }
 
-.filter-btn.active {
-    background-color: #333333;
-    border-color: #333333;
-    color: #ffffff;
-}
-
-.list-title {
-    font-size: 18px;
-    margin: 0 0 15px 0;
-}
-
-/* Карточка рецепта */
-.recipe-card {
+/* Formularz */
+.formularz {
+    display: none;
     background-color: #ffffff;
     border: 1px solid #dddddd;
     padding: 15px;
-    margin-bottom: 15px;
-    cursor: pointer;
+    margin-bottom: 20px;
 }
 
-.recipe-card:hover {
-    border-color: #999999;
-}
-
-.recipe-img {
+.formularz.pokaz {
     display: block;
+}
+
+.formularz h2 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+}
+
+.formularz label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.formularz input,
+.formularz textarea,
+.formularz select {
     width: 100%;
-    max-height: 220px;
-    object-fit: cover;
+    max-width: 400px;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.przyciski {
+    margin-top: 15px;
+}
+
+/* Komunikat o błędzie */
+.blad {
+    display: none;
+    color: #b00020;
+    font-size: 14px;
+    margin: 10px 0 0 0;
+}
+
+.blad.pokaz {
+    display: block;
+}
+
+/* Tablica z trzema kolumnami */
+.tablica {
+    font-size: 0;
+}
+
+.kolumna {
+    display: inline-block;
+    vertical-align: top;
+    width: 32%;
+    margin-right: 2%;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.kolumna:last-child {
+    margin-right: 0;
+}
+
+.kolumna h2 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+}
+
+.kolumna h2 span {
+    color: #777777;
+    font-size: 14px;
+}
+
+.kolumna ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Karta zadania */
+.zadanie {
+    border: 1px solid #dddddd;
+    background-color: #fafafa;
+    padding: 10px;
     margin-bottom: 10px;
 }
 
-.recipe-title {
-    font-size: 18px;
-    margin: 0 0 5px 0;
-}
-
-.recipe-category {
-    font-size: 13px;
-    color: #777777;
-}
-
-.recipe-desc {
-    margin: 10px 0;
+.zadanie h3 {
     font-size: 15px;
+    margin: 0 0 5px 0;
+    word-wrap: break-word;
 }
 
-.recipe-meta {
+.zadanie p {
     font-size: 14px;
-    color: #666666;
-}
-
-/* Модальное окно */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    overflow-y: auto;
-}
-
-.modal.active {
-    display: block;
-}
-
-.modal-content {
-    background-color: #ffffff;
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    position: relative;
-}
-
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    line-height: 1;
-    cursor: pointer;
     color: #555555;
+    margin: 0 0 10px 0;
+    word-wrap: break-word;
 }
 
-.modal-close:hover {
-    color: #000000;
+.zadanie .przycisk {
+    font-size: 13px;
+    padding: 5px 10px;
+    margin-right: 5px;
 }
 
-#modalBody h2 {
-    margin-top: 0;
-    font-size: 20px;
+.pusto {
+    color: #888888;
+    font-size: 14px;
 }
 
-#modalBody h3 {
-    font-size: 16px;
-    margin: 15px 0 5px 0;
-}
-
-#modalBody ul,
-#modalBody ol {
-    margin: 0;
-    padding-left: 20px;
-}
-
-#modalBody li {
-    margin-bottom: 5px;
-}
-
-/* Подвал */
-.footer {
+/* Stopka */
+.stopka {
     border-top: 1px solid #dddddd;
     padding: 20px;
     text-align: center;
     color: #777777;
     font-size: 13px;
+}
+
+/* Na wąskim ekranie kolumny układają się jedna pod drugą */
+@media (max-width: 800px) {
+    .kolumna {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
 }

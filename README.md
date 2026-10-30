@@ -16,7 +16,7 @@ Praktyczna praca Git · baza danych · administracja · dokumentacja
 
 **TaskNest** to projekt aplikacji webowej do zarządzania zadaniami. Użytkownik zakłada konto,
 loguje się, a następnie prowadzi listę swoich zadań: dodaje, edytuje i usuwa zadania
-(tytuł, opis, termin, priorytet, status). Dane przechowywane są w bazie **PostgreSQL**.
+(tytuł, opis, status). Dane przechowywane są w bazie **PostgreSQL**.
 
 W ramach pracy praktycznej wykonane zostały cztery obszary:
 
@@ -98,7 +98,8 @@ CREATE DATABASE task_manager_db;
 
 1. **Baza danych** — utwórz bazę `task_manager_db` w pgAdmin 4 i uruchom po kolei skrypty
    `database/schema.sql`, `database/insert-data.sql`, `database/select-queries.sql`.
-2. **Interfejs** — otwórz plik `frontend/index.html` w przeglądarce.
+2. **Interfejs** — otwórz plik `frontend/index.html` w przeglądarce. Na razie zadania
+   są zapisane w pliku `frontend/js/app.js`, więc strona działa bez serwera.
 
 ## Status i plan rozwoju
 
