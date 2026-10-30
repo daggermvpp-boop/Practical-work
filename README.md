@@ -108,6 +108,8 @@ CREATE DATABASE task_manager_db;
 - [x] Administracja bazą: uprawnienia oraz backup/restore (`docs/`)
 - [x] Konfiguracja repozytorium i CI (GitHub Actions)
 - [ ] Backend (PHP) i podłączenie interfejsu do bazy
+- [ ] Logowanie użytkownika w interfejsie (na razie tylko makieta)
+- [ ] Wyszukiwanie zadań i pola „termin”, „priorytet”
 - [ ] Testy (`tests/`)
 
 ---

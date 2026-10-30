@@ -39,13 +39,6 @@ body {
     margin-bottom: 20px;
 }
 
-.pasek input {
-    padding: 8px;
-    border: 1px solid #cccccc;
-    font-size: 14px;
-    margin-left: 10px;
-}
-
 /* Przyciski */
 .przycisk {
     background-color: #2f5d8a;

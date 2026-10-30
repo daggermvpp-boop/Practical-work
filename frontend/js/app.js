@@ -1,5 +1,5 @@
 // Prosta tablica zadań.
-// Dane są na razie w tym pliku, później można je wziąć z bazy danych.
+// TODO: podłączyć zadania do bazy danych, na razie są zapisane w tym pliku.
 
 var zadania = [
     {
@@ -61,7 +61,6 @@ var poleOpis = document.getElementById('opis');
 var poleStatus = document.getElementById('status');
 var blad = document.getElementById('blad');
 var zapiszBtn = document.getElementById('zapiszBtn');
-var szukaj = document.getElementById('szukaj');
 
 var nazwyStatusow = {
     todo: 'Do zrobienia',
@@ -71,8 +70,6 @@ var nazwyStatusow = {
 
 // Pokazanie zadań na tablicy
 function pokazZadania() {
-    var szukanyTekst = szukaj.value.toLowerCase();
-
     listaTodo.innerHTML = '';
     listaProgress.innerHTML = '';
     listaDone.innerHTML = '';
@@ -81,15 +78,6 @@ function pokazZadania() {
 
     for (var i = 0; i < zadania.length; i++) {
         var zadanie = zadania[i];
-
-        var tytul = zadanie.tytul.toLowerCase();
-        var opis = zadanie.opis.toLowerCase();
-
-        // Szukanie po tytule i opisie
-        if (szukanyTekst !== '' && tytul.indexOf(szukanyTekst) === -1 && opis.indexOf(szukanyTekst) === -1) {
-            continue;
-        }
-
         var karta = utworzKarte(zadanie);
 
         if (zadanie.status === 'todo') {
@@ -262,10 +250,6 @@ document.getElementById('dodajBtn').addEventListener('click', function () {
 
 document.getElementById('anulujBtn').addEventListener('click', function () {
     ukryjFormularz();
-});
-
-szukaj.addEventListener('input', function () {
-    pokazZadania();
 });
 
 // Start
