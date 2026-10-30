@@ -3,52 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLASSIFIED // Секретные Рецепты</title>
+    <title>Вкусно дома — рецепты</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <span class="logo-badge">RESTRICTED</span>
-                <h1>TOP SECRET RECIPES</h1>
-            </div>
-            <div class="clearance-badge">
-                Допуск: <span class="highlight">УРОВЕНЬ 5</span>
-            </div>
-        </div>
+        <h1>Вкусно дома</h1>
+        <p>Простые рецепты на каждый день</p>
     </header>
 
-    <main class="container">
-        <section class="hero scroll-reveal">
-            закрытая кулинарная база данных
-            <p>Доступ строго регламентирован. Изучайте секретные технологии приготовления легендарных блюд.</p>
-        </section>
-
-        <div class="filters scroll-reveal">
-            <button type="button" class="filter-btn active" data-filter="all">Все объекты</button>
-            <button type="button" class="filter-btn" data-filter="hot">Горячее</button>
+    <main class="main">
+        <div class="filters">
+            <button type="button" class="filter-btn active" data-filter="all">Все</button>
+            <button type="button" class="filter-btn" data-filter="hot">Основные блюда</button>
             <button type="button" class="filter-btn" data-filter="dessert">Десерты</button>
             <button type="button" class="filter-btn" data-filter="drink">Напитки</button>
         </div>
 
-        <section class="recipes-grid" id="recipesGrid">
-            <!-- Карточки генерируются через JS -->
-        </section>
+        <h2 class="list-title">Рецепты</h2>
+
+        <div id="recipes"></div>
     </main>
 
-    <!-- Модальное окно -->
     <div class="modal" id="recipeModal">
         <div class="modal-content">
-            <button type="button" class="modal-close" id="modalClose">&times;</button>
+            <button type="button" class="modal-close" id="modalClose">×</button>
             <div id="modalBody"></div>
         </div>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2026 ARCHIVES // КЛАССИФИЦИРОВАНО</p>
+        <p>Учебный проект. Рецепты для примера.</p>
     </footer>
 
     <script src="js/app.js"></script>

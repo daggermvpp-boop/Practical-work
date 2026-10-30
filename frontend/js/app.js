@@ -1,190 +1,192 @@
-const recipes = [
+// Данные рецептов
+var recipes = [
     {
         id: 1,
-        title: "Квантовый Стейк Рибай",
-        category: "hot",
-        categoryName: "Горячее",
-        time: "25 мин",
-        difficulty: "Уровень 4",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
-        description: "Строго секретный метод прожарки с использованием криогенной подготовки и фирменного маринада.",
+        title: 'Стейк с розмарином',
+        category: 'hot',
+        categoryName: 'Основное блюдо',
+        time: '25 минут',
+        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+        description: 'Стейк с розмарином и сливочным маслом. Хорошо подходит для ужина.',
         ingredients: [
-            "Мраморная говядина (Рибай) — 400г",
-            "Розмарин свежий — 2 ветки",
-            "Чеснок — 3 зубчика",
-            "Масло сливочное — 50г",
-            "Секретная специя №7 — 5г"
+            'Стейки из говядины — 2 шт.',
+            'Розмарин — 2 веточки',
+            'Чеснок — 2 зубчика',
+            'Сливочное масло — 30 г',
+            'Соль и перец — по вкусу'
         ],
         instructions: [
-            "Произвести глубокую шоковую разморозку мяса до температуры камеры.",
-            "Натереть стейк фирменной смесью специй и оставить под вакуумом на 10 минут.",
-            "Обжаривать на раскаленной чугунной сковороде ровно по 90 секунд с каждой стороны.",
-            "Добавить сливочное масло, розмарин и давленный чеснок, непрерывно поливая мясо.",
-            "Дать 'отдохнуть' на деревянной доске в течение 5 минут перед подачей."
+            'Достаньте мясо из холодильника за 20 минут до готовки и обсушите.',
+            'Посолите и поперчите стейки с двух сторон.',
+            'Разогрейте сковороду и жарьте по 2–4 минуты с каждой стороны.',
+            'Добавьте масло, розмарин и чеснок, полейте стейки маслом.',
+            'Дайте мясу отдохнуть 5 минут и подавайте.'
         ]
     },
     {
         id: 2,
-        title: "Черный Трюфельный Суп-Пюре",
-        category: "hot",
-        categoryName: "Горячее",
-        time: "40 мин",
-        difficulty: "Уровень 3",
-        image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
-        description: "Бархатистая текстура грибного крем-супа с добавлением выдержанного трюфельного экстракта.",
+        title: 'Грибной крем-суп',
+        category: 'hot',
+        categoryName: 'Основное блюдо',
+        time: '40 минут',
+        image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80',
+        description: 'Простой суп из шампиньонов со сливками.',
         ingredients: [
-            "Лесные грибы (белые/шампиньоны) — 500г",
-            "Сливки 33% — 200 мл",
-            "Трюфельное масло — 10 мл",
-            "Лук-шалот — 2 шт",
-            "Овощной бульон — 400 мл"
+            'Шампиньоны — 400 г',
+            'Сливки — 200 мл',
+            'Сливочное масло — 20 г',
+            'Лук — 1 шт.',
+            'Вода или бульон — 500 мл'
         ],
         instructions: [
-            "Обжарить мелко нарезанный лук-шалот на медленном огне до прозрачности.",
-            "Добавить подготовленные грибы и тушить до полного выпаривания влаги.",
-            "Влить овощной бульон и варить на слабом огне 15 минут.",
-            "Пюрировать массу погружным блендером до состояния однородного шелка.",
-            "Ввести сливки, довести до первых признаков кипения и заправить трюфельным маслом."
+            'Нарежьте лук и обжарьте его на масле до мягкости.',
+            'Добавьте нарезанные грибы и готовьте 8 минут.',
+            'Влейте воду или бульон и варите 15 минут.',
+            'Измельчите суп блендером.',
+            'Добавьте сливки, соль и перец, прогрейте суп.'
         ]
     },
     {
         id: 3,
-        title: "Десерт 'Секрет Протокола'",
-        category: "dessert",
-        categoryName: "Десерты",
-        time: "30 мин",
-        difficulty: "Уровень 5",
-        image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80",
-        description: "Многослойный шоколадный мусс с зеркальной глазурью и жидким цитрусовым центром.",
+        title: 'Шоколадный мусс',
+        category: 'dessert',
+        categoryName: 'Десерт',
+        time: '30 минут',
+        image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80',
+        description: 'Шоколадный десерт со сливками и апельсином.',
         ingredients: [
-            "Темный шоколад 72% — 200г",
-            "Жирные сливки для взбивания — 300 мл",
-            "Апельсиновый фреш — 100 мл",
-            "Желатин листовой — 6г",
-            "Какао-порошок премиум — 30г"
+            'Тёмный шоколад — 150 г',
+            'Сливки — 250 мл',
+            'Апельсин — 1 шт.',
+            'Сахарная пудра — по желанию',
+            'Какао — для подачи'
         ],
         instructions: [
-            "Замочить желатин в холодном апельсиновом соке.",
-            "Растопить шоколад на водяной бане и аккуратно соединить со взбитыми сливками.",
-            "Сформировать цилиндрические формы, заполнив центр цитрусовым желе.",
-            "Заморозить заготовки в шок-камере в течение 2 часов.",
-            "Покрыть зеркальной глазурью перед подачей."
+            'Снимите с апельсина немного цедры.',
+            'Растопите шоколад на водяной бане и дайте остыть.',
+            'Взбейте сливки и аккуратно добавьте шоколад и цедру.',
+            'Разложите по стаканчикам и уберите в холодильник на 2 часа.',
+            'Перед подачей посыпьте какао.'
         ]
     },
     {
         id: 4,
-        title: "Коктейль 'Нулевой Меридиан'",
-        category: "drink",
-        categoryName: "Напитки",
-        time: "10 мин",
-        difficulty: "Уровень 2",
-        image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80",
-        description: "Освежающий тонизирующий эликсир на основе синей матчи, цитрусов и газированного инфуза.",
+        title: 'Лимонад с лаймом',
+        category: 'drink',
+        categoryName: 'Напиток',
+        time: '10 минут',
+        image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80',
+        description: 'Домашний лимонад с лаймом и мятой.',
         ingredients: [
-            "Порошок синей матчи (Анчан) — 5г",
-            "Тоник премиум-класса — 150 мл",
-            "Сок лайма — 30 мл",
-            "Сироп лемонграсса — 20 мл",
-            "Пищевой кандурин (серебристый) — 0.1г"
+            'Лайм — 1 шт.',
+            'Газированная вода — 400 мл',
+            'Мята — несколько веточек',
+            'Сахар или мёд — 1–2 ч. ложки',
+            'Лёд — по вкусу'
         ],
         instructions: [
-            "Заварить синюю матчу в небольшом количестве теплой воды до полного растворения.",
-            "В высоком бокале смешать сок лайма и сироп лемонграсса со льдом.",
-            "Аккуратно влить охлажденный тоник.",
-            "Сверху влить концентрированный настой матчи для создания градиентного эффекта.",
-            "Добавить пищевой кандурин для космического мерцания."
+            'Выжмите сок лайма в кувшин и добавьте сахар или мёд.',
+            'Разомните мяту ложкой.',
+            'Добавьте лёд и залейте газированной водой.',
+            'Перемешайте и попробуйте на вкус.',
+            'Подавайте сразу.'
         ]
     }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.getElementById('recipesGrid');
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const modal = document.getElementById('recipeModal');
-    const modalClose = document.getElementById('modalClose');
-    const modalBody = document.getElementById('modalBody');
+var list = document.getElementById('recipes');
+var modal = document.getElementById('recipeModal');
+var modalBody = document.getElementById('modalBody');
+var closeButton = document.getElementById('modalClose');
+var filterButtons = document.querySelectorAll('.filter-btn');
 
-    // Рендер карточек
-    function renderRecipes(filter = 'all') {
-        grid.innerHTML = '';
-        const filtered = filter === 'all' ? recipes : recipes.filter(r => r.category === filter);
+// Показать карточки рецептов
+function showRecipes(filter) {
+    list.innerHTML = '';
 
-        filtered.forEach(recipe => {
-            const card = document.createElement('div');
-            card.className = 'recipe-card scroll-reveal';
-            card.innerHTML = `
-                <div class="recipe-img-container">
-                    <span class="recipe-category">${recipe.categoryName}</span>
-                    <img src="${recipe.image}" alt="${recipe.title}" class="recipe-img">
-                </div>
-                <div class="recipe-info">
-                    <h3 class="recipe-title">${recipe.title}</h3>
-                    <p class="recipe-desc">${recipe.description}</p>
-                    <div class="recipe-meta">
-                        <span>⏱ ${recipe.time}</span>
-                        <span>🔒 ${recipe.difficulty}</span>
-                    </div>
-                </div>
-            `;
-            card.addEventListener('click', () => openModal(recipe));
-            grid.appendChild(card);
-        });
-
-        observeElements();
-    }
-
-    // Модальное окно
-    function openModal(recipe) {
-        modalBody.innerHTML = `
-            <h2>${recipe.title}</h2>
-            <p>${recipe.description}</p>
-            <h4>Ингредиенты:</h4>
-            <ul>
-                ${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}
-            </ul>
-            <h4>Технология приготовления:</h4>
-            <ol>
-                ${recipe.instructions.map(ins => `<li>${ins}</li>`).join('')}
-            </ol>
-        `;
-        modal.classList.add('active');
-    }
-
-    modalClose.addEventListener('click', () => {
-        modal.classList.remove('active');
-    });
-
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
+    recipes.forEach(function (recipe) {
+        if (filter !== 'all' && recipe.category !== filter) {
+            return;
         }
-    });
 
-    // Фильтрация
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderRecipes(btn.dataset.filter);
+        var card = document.createElement('div');
+        card.className = 'recipe-card';
+
+        var img = document.createElement('img');
+        img.className = 'recipe-img';
+        img.src = recipe.image;
+        img.alt = recipe.title;
+
+        var title = document.createElement('h3');
+        title.className = 'recipe-title';
+        title.textContent = recipe.title;
+
+        var category = document.createElement('p');
+        category.className = 'recipe-category';
+        category.textContent = recipe.categoryName + ' · ' + recipe.time;
+
+        var description = document.createElement('p');
+        description.className = 'recipe-desc';
+        description.textContent = recipe.description;
+
+        card.appendChild(img);
+        card.appendChild(title);
+        card.appendChild(category);
+        card.appendChild(description);
+
+        card.addEventListener('click', function () {
+            openRecipe(recipe);
         });
+
+        list.appendChild(card);
     });
+}
 
-    // Scroll Reveal Observer
-    function observeElements() {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+// Открыть рецепт
+function openRecipe(recipe) {
+    var html = '<h2>' + recipe.title + '</h2>';
+    html += '<p>' + recipe.description + '</p>';
 
-        document.querySelectorAll('.scroll-reveal').forEach(el => {
-            observer.observe(el);
-        });
+    html += '<h3>Ингредиенты</h3><ul>';
+    recipe.ingredients.forEach(function (item) {
+        html += '<li>' + item + '</li>';
+    });
+    html += '</ul>';
+
+    html += '<h3>Приготовление</h3><ol>';
+    recipe.instructions.forEach(function (step) {
+        html += '<li>' + step + '</li>';
+    });
+    html += '</ol>';
+
+    modalBody.innerHTML = html;
+    modal.classList.add('active');
+}
+
+// Закрыть окно рецепта
+function closeRecipe() {
+    modal.classList.remove('active');
+}
+
+closeButton.addEventListener('click', closeRecipe);
+
+modal.addEventListener('click', function (event) {
+    if (event.target === modal) {
+        closeRecipe();
     }
-
-    // Инициализация
-    renderRecipes();
 });
+
+// Кнопки фильтров
+filterButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        filterButtons.forEach(function (item) {
+            item.classList.remove('active');
+        });
+
+        button.classList.add('active');
+        showRecipes(button.getAttribute('data-filter'));
+    });
+});
+
+// Запуск
+showRecipes('all');
