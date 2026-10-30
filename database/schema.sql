@@ -1,37 +1,9 @@
--- ============================================================
---  TaskNest - struktura bazy danych
---  PostgreSQL 18 / uruchamiać w pgAdmin 4 -> Query Tool
---  (po połączeniu z bazą task_manager_db)
--- ============================================================
---
---  UWAGA: skrypt usuwa istniejące tabele i tworzy je od nowa.
---  Uruchamiaj go tylko na bazie, której strukturę chcesz odtworzyć.
---
---  Kolejność uruchamiania skryptów:
---    1. schema.sql          - struktura tabel (ten plik)
---    2. insert-data.sql     - przykładowe dane (5 rekordów w każdej tabeli)
---    3. select-queries.sql  - przykładowe zapytania SELECT
---
---  Baza używa trzech tabel:
---    users   - użytkownicy aplikacji,
---    tasks   - zadania przypisane do użytkownika,
---    comment - komentarze do zadań.
---
---  Uprawnienia dla dodatkowego użytkownika bazy opisuje
---  dokumentacja: docs/database-roles.md
--- ============================================================
 
--- (opcjonalnie) utworzenie bazy - wykonaj raz, jeśli baza jeszcze nie istnieje:
--- CREATE DATABASE task_manager_db;
-
--- ---------- usunięcie starych tabel (kolejność odwrotna do zależności) ----------
 
 DROP TABLE IF EXISTS comment CASCADE;
 DROP TABLE IF EXISTS tasks   CASCADE;
 DROP TABLE IF EXISTS users   CASCADE;
 
--- ---------- tabela: users ----------
--- Użytkownicy aplikacji. username i email są unikalne.
 
 CREATE TABLE users (
     id            SERIAL       PRIMARY KEY,
@@ -43,9 +15,6 @@ CREATE TABLE users (
     CONSTRAINT users_email_key    UNIQUE (email)
 );
 
--- ---------- tabela: tasks ----------
--- Zadania. Każde zadanie należy do jednego użytkownika (user_id).
--- Usunięcie użytkownika usuwa także jego zadania (ON DELETE CASCADE).
 
 CREATE TABLE tasks (
     id          SERIAL       PRIMARY KEY,
@@ -58,8 +27,7 @@ CREATE TABLE tasks (
         REFERENCES users (id) ON DELETE CASCADE
 );
 
--- ---------- tabela: comment ----------
--- Komentarze do zadań. Komentarz zawsze należy do zadania i do użytkownika.
+
 
 CREATE TABLE comment (
     id         SERIAL  PRIMARY KEY,
@@ -73,8 +41,6 @@ CREATE TABLE comment (
         REFERENCES users (id) ON DELETE CASCADE
 );
 
--- ---------- indeksy na kluczach obcych ----------
--- Przyspieszają zapytania łączące tabele (JOIN) i filtrowanie po user_id / task_id.
 
 CREATE INDEX idx_tasks_user_id    ON tasks (user_id);
 CREATE INDEX idx_comment_task_id  ON comment (task_id);
