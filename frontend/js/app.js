@@ -1,190 +1,256 @@
-const recipes = [
+// Prosta tablica zadań.
+// TODO: podłączyć zadania do bazy danych, na razie są zapisane w tym pliku.
+
+var zadania = [
     {
         id: 1,
-        title: "Квантовый Стейк Рибай",
-        category: "hot",
-        categoryName: "Горячее",
-        time: "25 мин",
-        difficulty: "Уровень 4",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
-        description: "Строго секретный метод прожарки с использованием криогенной подготовки и фирменного маринада.",
-        ingredients: [
-            "Мраморная говядина (Рибай) — 400г",
-            "Розмарин свежий — 2 ветки",
-            "Чеснок — 3 зубчика",
-            "Масло сливочное — 50г",
-            "Секретная специя №7 — 5г"
-        ],
-        instructions: [
-            "Произвести глубокую шоковую разморозку мяса до температуры камеры.",
-            "Натереть стейк фирменной смесью специй и оставить под вакуумом на 10 минут.",
-            "Обжаривать на раскаленной чугунной сковороде ровно по 90 секунд с каждой стороны.",
-            "Добавить сливочное масло, розмарин и давленный чеснок, непрерывно поливая мясо.",
-            "Дать 'отдохнуть' на деревянной доске в течение 5 минут перед подачей."
-        ]
+        tytul: 'Zrobić diagram ERD',
+        opis: 'Tabele users, tasks i comment',
+        status: 'progress'
     },
     {
         id: 2,
-        title: "Черный Трюфельный Суп-Пюре",
-        category: "hot",
-        categoryName: "Горячее",
-        time: "40 мин",
-        difficulty: "Уровень 3",
-        image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
-        description: "Бархатистая текстура грибного крем-супа с добавлением выдержанного трюфельного экстракта.",
-        ingredients: [
-            "Лесные грибы (белые/шампиньоны) — 500г",
-            "Сливки 33% — 200 мл",
-            "Трюфельное масло — 10 мл",
-            "Лук-шалот — 2 шт",
-            "Овощной бульон — 400 мл"
-        ],
-        instructions: [
-            "Обжарить мелко нарезанный лук-шалот на медленном огне до прозрачности.",
-            "Добавить подготовленные грибы и тушить до полного выпаривания влаги.",
-            "Влить овощной бульон и варить на слабом огне 15 минут.",
-            "Пюрировать массу погружным блендером до состояния однородного шелка.",
-            "Ввести сливки, довести до первых признаков кипения и заправить трюфельным маслом."
-        ]
+        tytul: 'Zrobić makiety ekranów',
+        opis: 'Lista zadań, formularz, logowanie',
+        status: 'done'
     },
     {
         id: 3,
-        title: "Десерт 'Секрет Протокола'",
-        category: "dessert",
-        categoryName: "Десерты",
-        time: "30 мин",
-        difficulty: "Уровень 5",
-        image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80",
-        description: "Многослойный шоколадный мусс с зеркальной глазурью и жидким цитрусовым центром.",
-        ingredients: [
-            "Темный шоколад 72% — 200г",
-            "Жирные сливки для взбивания — 300 мл",
-            "Апельсиновый фреш — 100 мл",
-            "Желатин листовой — 6г",
-            "Какао-порошок премиум — 30г"
-        ],
-        instructions: [
-            "Замочить желатин в холодном апельсиновом соке.",
-            "Растопить шоколад на водяной бане и аккуратно соединить со взбитыми сливками.",
-            "Сформировать цилиндрические формы, заполнив центр цитрусовым желе.",
-            "Заморозить заготовки в шок-камере в течение 2 часов.",
-            "Покрыть зеркальной глазурью перед подачей."
-        ]
+        tytul: 'Skonfigurować PostgreSQL',
+        opis: 'Baza task_manager_db i skrypty SQL',
+        status: 'todo'
     },
     {
         id: 4,
-        title: "Коктейль 'Нулевой Меридиан'",
-        category: "drink",
-        categoryName: "Напитки",
-        time: "10 мин",
-        difficulty: "Уровень 2",
-        image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80",
-        description: "Освежающий тонизирующий эликсир на основе синей матчи, цитрусов и газированного инфуза.",
-        ingredients: [
-            "Порошок синей матчи (Анчан) — 5г",
-            "Тоник премиум-класса — 150 мл",
-            "Сок лайма — 30 мл",
-            "Сироп лемонграсса — 20 мл",
-            "Пищевой кандурин (серебристый) — 0.1г"
-        ],
-        instructions: [
-            "Заварить синюю матчу в небольшом количестве теплой воды до полного растворения.",
-            "В высоком бокале смешать сок лайма и сироп лемонграсса со льдом.",
-            "Аккуратно влить охлажденный тоник.",
-            "Сверху влить концентрированный настой матчи для создания градиентного эффекта.",
-            "Добавить пищевой кандурин для космического мерцания."
-        ]
+        tytul: 'Napisać README',
+        opis: 'Opis projektu i instrukcja uruchomienia',
+        status: 'done'
+    },
+    {
+        id: 5,
+        tytul: 'Podłączyć frontend do bazy',
+        opis: 'Na razie dane są zapisane w pliku app.js',
+        status: 'todo'
     }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.getElementById('recipesGrid');
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const modal = document.getElementById('recipeModal');
-    const modalClose = document.getElementById('modalClose');
-    const modalBody = document.getElementById('modalBody');
+var nastepneId = 6;
+var edytowaneId = null;
 
-    // Рендер карточек
-    function renderRecipes(filter = 'all') {
-        grid.innerHTML = '';
-        const filtered = filter === 'all' ? recipes : recipes.filter(r => r.category === filter);
+var listaTodo = document.getElementById('lista-todo');
+var listaProgress = document.getElementById('lista-progress');
+var listaDone = document.getElementById('lista-done');
 
-        filtered.forEach(recipe => {
-            const card = document.createElement('div');
-            card.className = 'recipe-card scroll-reveal';
-            card.innerHTML = `
-                <div class="recipe-img-container">
-                    <span class="recipe-category">${recipe.categoryName}</span>
-                    <img src="${recipe.image}" alt="${recipe.title}" class="recipe-img">
-                </div>
-                <div class="recipe-info">
-                    <h3 class="recipe-title">${recipe.title}</h3>
-                    <p class="recipe-desc">${recipe.description}</p>
-                    <div class="recipe-meta">
-                        <span>⏱ ${recipe.time}</span>
-                        <span>🔒 ${recipe.difficulty}</span>
-                    </div>
-                </div>
-            `;
-            card.addEventListener('click', () => openModal(recipe));
-            grid.appendChild(card);
-        });
+var pustoElements = {
+    todo: document.getElementById('pusto-todo'),
+    progress: document.getElementById('pusto-progress'),
+    done: document.getElementById('pusto-done')
+};
 
-        observeElements();
-    }
+var liczniki = {
+    todo: document.getElementById('licznik-todo'),
+    progress: document.getElementById('licznik-progress'),
+    done: document.getElementById('licznik-done')
+};
 
-    // Модальное окно
-    function openModal(recipe) {
-        modalBody.innerHTML = `
-            <h2>${recipe.title}</h2>
-            <p>${recipe.description}</p>
-            <h4>Ингредиенты:</h4>
-            <ul>
-                ${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}
-            </ul>
-            <h4>Технология приготовления:</h4>
-            <ol>
-                ${recipe.instructions.map(ins => `<li>${ins}</li>`).join('')}
-            </ol>
-        `;
-        modal.classList.add('active');
-    }
+var formularz = document.getElementById('formularz');
+var formularzTytul = document.getElementById('formularzTytul');
+var zadanieForm = document.getElementById('zadanieForm');
+var poleTytul = document.getElementById('tytul');
+var poleOpis = document.getElementById('opis');
+var poleStatus = document.getElementById('status');
+var blad = document.getElementById('blad');
+var zapiszBtn = document.getElementById('zapiszBtn');
 
-    modalClose.addEventListener('click', () => {
-        modal.classList.remove('active');
-    });
+var nazwyStatusow = {
+    todo: 'Do zrobienia',
+    progress: 'W trakcie',
+    done: 'Zrobione'
+};
 
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
+// Pokazanie zadań na tablicy
+function pokazZadania() {
+    listaTodo.innerHTML = '';
+    listaProgress.innerHTML = '';
+    listaDone.innerHTML = '';
+
+    var policzone = { todo: 0, progress: 0, done: 0 };
+
+    for (var i = 0; i < zadania.length; i++) {
+        var zadanie = zadania[i];
+        var karta = utworzKarte(zadanie);
+
+        if (zadanie.status === 'todo') {
+            listaTodo.appendChild(karta);
+            policzone.todo++;
+        } else if (zadanie.status === 'progress') {
+            listaProgress.appendChild(karta);
+            policzone.progress++;
+        } else {
+            listaDone.appendChild(karta);
+            policzone.done++;
         }
-    });
-
-    // Фильтрация
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderRecipes(btn.dataset.filter);
-        });
-    });
-
-    // Scroll Reveal Observer
-    function observeElements() {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => {
-            observer.observe(el);
-        });
     }
 
-    // Инициализация
-    renderRecipes();
+    pokazLicznik('todo', policzone.todo);
+    pokazLicznik('progress', policzone.progress);
+    pokazLicznik('done', policzone.done);
+}
+
+// Licznik zadań w kolumnie
+function pokazLicznik(status, ile) {
+    liczniki[status].textContent = ile;
+
+    if (ile === 0) {
+        pustoElements[status].style.display = 'block';
+    } else {
+        pustoElements[status].style.display = 'none';
+    }
+}
+
+// Jedna karta zadania
+function utworzKarte(zadanie) {
+    var karta = document.createElement('li');
+    karta.className = 'zadanie';
+
+    var tytul = document.createElement('h3');
+    tytul.textContent = zadanie.tytul;
+
+    var opis = document.createElement('p');
+    if (zadanie.opis === '') {
+        opis.textContent = 'Brak opisu';
+    } else {
+        opis.textContent = zadanie.opis;
+    }
+
+    var status = document.createElement('p');
+    status.textContent = 'Status: ' + nazwyStatusow[zadanie.status];
+
+    var edytujBtn = document.createElement('button');
+    edytujBtn.type = 'button';
+    edytujBtn.className = 'przycisk przycisk-jasny';
+    edytujBtn.textContent = 'Edytuj';
+    edytujBtn.addEventListener('click', function () {
+        pokazFormularz(zadanie.id);
+    });
+
+    var usunBtn = document.createElement('button');
+    usunBtn.type = 'button';
+    usunBtn.className = 'przycisk przycisk-jasny';
+    usunBtn.textContent = 'Usuń';
+    usunBtn.addEventListener('click', function () {
+        usunZadanie(zadanie.id);
+    });
+
+    karta.appendChild(tytul);
+    karta.appendChild(opis);
+    karta.appendChild(status);
+    karta.appendChild(edytujBtn);
+    karta.appendChild(usunBtn);
+
+    return karta;
+}
+
+// Otworzenie formularza
+function pokazFormularz(id) {
+    formularz.classList.add('pokaz');
+    blad.classList.remove('pokaz');
+
+    if (id === null) {
+        edytowaneId = null;
+        formularzTytul.textContent = 'Dodaj zadanie';
+        zapiszBtn.textContent = 'Dodaj';
+        zadanieForm.reset();
+    } else {
+        edytowaneId = id;
+
+        var zadanie = znajdzZadanie(id);
+
+        formularzTytul.textContent = 'Edytuj zadanie';
+        zapiszBtn.textContent = 'Zapisz';
+        poleTytul.value = zadanie.tytul;
+        poleOpis.value = zadanie.opis;
+        poleStatus.value = zadanie.status;
+    }
+}
+
+function ukryjFormularz() {
+    formularz.classList.remove('pokaz');
+    edytowaneId = null;
+    zadanieForm.reset();
+}
+
+function znajdzZadanie(id) {
+    for (var i = 0; i < zadania.length; i++) {
+        if (zadania[i].id === id) {
+            return zadania[i];
+        }
+    }
+
+    return null;
+}
+
+function usunZadanie(id) {
+    if (!confirm('Usunąć to zadanie?')) {
+        return;
+    }
+
+    var nowaLista = [];
+
+    for (var i = 0; i < zadania.length; i++) {
+        if (zadania[i].id !== id) {
+            nowaLista.push(zadania[i]);
+        }
+    }
+
+    zadania = nowaLista;
+
+    if (edytowaneId === id) {
+        ukryjFormularz();
+    }
+
+    pokazZadania();
+}
+
+// Zapis zadania z formularza
+zadanieForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var tytul = poleTytul.value.trim();
+
+    if (tytul === '') {
+        blad.classList.add('pokaz');
+        return;
+    }
+
+    if (edytowaneId === null) {
+        zadania.push({
+            id: nastepneId,
+            tytul: tytul,
+            opis: poleOpis.value.trim(),
+            status: poleStatus.value
+        });
+
+        nastepneId++;
+    } else {
+        var zadanie = znajdzZadanie(edytowaneId);
+
+        zadanie.tytul = tytul;
+        zadanie.opis = poleOpis.value.trim();
+        zadanie.status = poleStatus.value;
+    }
+
+    ukryjFormularz();
+    pokazZadania();
 });
+
+document.getElementById('dodajBtn').addEventListener('click', function () {
+    pokazFormularz(null);
+});
+
+document.getElementById('anulujBtn').addEventListener('click', function () {
+    ukryjFormularz();
+});
+
+// Start
+pokazZadania();
