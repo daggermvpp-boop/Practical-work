@@ -1,5 +1,3 @@
-// Prosta tablica zadań.
-// TODO: podłączyć zadania do bazy danych, na razie są zapisane w tym pliku.
 
 var zadania = [
     {
@@ -68,7 +66,6 @@ var nazwyStatusow = {
     done: 'Zrobione'
 };
 
-// Pokazanie zadań na tablicy
 function pokazZadania() {
     listaTodo.innerHTML = '';
     listaProgress.innerHTML = '';
@@ -97,7 +94,6 @@ function pokazZadania() {
     pokazLicznik('done', policzone.done);
 }
 
-// Licznik zadań w kolumnie
 function pokazLicznik(status, ile) {
     liczniki[status].textContent = ile;
 
@@ -108,7 +104,6 @@ function pokazLicznik(status, ile) {
     }
 }
 
-// Jedna karta zadania
 function utworzKarte(zadanie) {
     var karta = document.createElement('li');
     karta.className = 'zadanie';
@@ -151,7 +146,6 @@ function utworzKarte(zadanie) {
     return karta;
 }
 
-// Otworzenie formularza
 function pokazFormularz(id) {
     formularz.classList.add('pokaz');
     blad.classList.remove('pokaz');
@@ -212,7 +206,6 @@ function usunZadanie(id) {
     pokazZadania();
 }
 
-// Zapis zadania z formularza
 zadanieForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -252,5 +245,4 @@ document.getElementById('anulujBtn').addEventListener('click', function () {
     ukryjFormularz();
 });
 
-// Start
 pokazZadania();

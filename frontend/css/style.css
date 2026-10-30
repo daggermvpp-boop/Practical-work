@@ -1,4 +1,3 @@
-/* Ogólne ustawienia strony */
 body {
     margin: 0;
     padding: 0;
@@ -9,7 +8,6 @@ body {
     line-height: 1.5;
 }
 
-/* Nagłówek */
 .naglowek {
     background-color: #ffffff;
     border-bottom: 1px solid #dddddd;
@@ -28,7 +26,6 @@ body {
     font-size: 14px;
 }
 
-/* Główna treść */
 .tresc {
     max-width: 1000px;
     margin: 0 auto;
@@ -39,7 +36,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Przyciski */
 .przycisk {
     background-color: #2f5d8a;
     border: 1px solid #2f5d8a;
@@ -63,7 +59,6 @@ body {
     background-color: #eeeeee;
 }
 
-/* Formularz */
 .formularz {
     display: none;
     background-color: #ffffff;
@@ -103,7 +98,6 @@ body {
     margin-top: 15px;
 }
 
-/* Komunikat o błędzie */
 .blad {
     display: none;
     color: #b00020;
@@ -115,7 +109,6 @@ body {
     display: block;
 }
 
-/* Tablica z trzema kolumnami */
 .tablica {
     font-size: 0;
 }
@@ -152,7 +145,6 @@ body {
     padding: 0;
 }
 
-/* Karta zadania */
 .zadanie {
     border: 1px solid #dddddd;
     background-color: #fafafa;
@@ -184,7 +176,6 @@ body {
     font-size: 14px;
 }
 
-/* Stopka */
 .stopka {
     border-top: 1px solid #dddddd;
     padding: 20px;
@@ -193,7 +184,6 @@ body {
     font-size: 13px;
 }
 
-/* Na wąskim ekranie kolumny układają się jedna pod drugą */
 @media (max-width: 800px) {
     .kolumna {
         display: block;

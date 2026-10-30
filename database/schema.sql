@@ -1,9 +1,6 @@
-
-
 DROP TABLE IF EXISTS comment CASCADE;
 DROP TABLE IF EXISTS tasks   CASCADE;
 DROP TABLE IF EXISTS users   CASCADE;
-
 
 CREATE TABLE users (
     id            SERIAL       PRIMARY KEY,
@@ -15,7 +12,6 @@ CREATE TABLE users (
     CONSTRAINT users_email_key    UNIQUE (email)
 );
 
-
 CREATE TABLE tasks (
     id          SERIAL       PRIMARY KEY,
     user_id     INTEGER      NOT NULL,
@@ -26,8 +22,6 @@ CREATE TABLE tasks (
     CONSTRAINT fk_tasks_user FOREIGN KEY (user_id)
         REFERENCES users (id) ON DELETE CASCADE
 );
-
-
 
 CREATE TABLE comment (
     id         SERIAL  PRIMARY KEY,
@@ -41,11 +35,7 @@ CREATE TABLE comment (
         REFERENCES users (id) ON DELETE CASCADE
 );
 
-
 CREATE INDEX idx_tasks_user_id    ON tasks (user_id);
 CREATE INDEX idx_comment_task_id  ON comment (task_id);
 CREATE INDEX idx_comment_user_id  ON comment (user_id);
 
--- ============================================================
---  Koniec skryptu. Następny krok: insert-data.sql
--- ============================================================

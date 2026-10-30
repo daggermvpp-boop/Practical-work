@@ -1,17 +1,4 @@
--- ============================================================
---  TaskNest - przykładowe dane (5 rekordów w każdej tabeli)
---  PostgreSQL 18 / uruchamiać w pgAdmin 4 -> Query Tool
---  (po uruchomieniu skryptu schema.sql)
--- ============================================================
---
---  Skrypt czyści tabele i restartuje licznik identyfikatorów,
---  dzięki temu można go uruchamiać wielokrotnie i dane zawsze
---  mają identyfikatory 1-5 (zgodne z odwołaniami poniżej).
--- ============================================================
-
 TRUNCATE TABLE comment, tasks, users RESTART IDENTITY CASCADE;
-
--- ---------- users ----------
 
 INSERT INTO users (username, email, password_hash, created_at) VALUES
 ('admin', 'admin@example.com', 'hash-placeholder-1', CURRENT_TIMESTAMP),
@@ -20,16 +7,12 @@ INSERT INTO users (username, email, password_hash, created_at) VALUES
 ('maxim_t', 'maxim@example.com', 'hash-placeholder-4', CURRENT_TIMESTAMP),
 ('elena_prog', 'elena@example.com', 'hash-placeholder-5', CURRENT_TIMESTAMP);
 
--- ---------- tasks ----------
-
 INSERT INTO tasks (user_id, title, description, status, created_at) VALUES
 (2, 'Przygotować makietę', 'Ekran listy i formularza', 'done', CURRENT_TIMESTAMP),
 (1, 'Stworzyć bazę danych', 'Struktura tabel w PostgreSQL', 'done', CURRENT_TIMESTAMP),
 (3, 'Napisać testy', 'Testy jednostkowe dla backendu', 'pending', CURRENT_TIMESTAMP),
 (4, 'Skonfigurować CI/CD', 'GitHub Actions dla budowania projektu', 'pending', CURRENT_TIMESTAMP),
 (5, 'Przygotować raport', 'Dokumentacja projektu', 'done', CURRENT_TIMESTAMP);
-
--- ---------- comment ----------
 
 INSERT INTO comment (task_id, user_id, content, created_at) VALUES
 (1, 2, 'Makieta została zatwierdzona', CURRENT_TIMESTAMP),
